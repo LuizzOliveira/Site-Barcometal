@@ -1,0 +1,507 @@
+/* Resetando estilo padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif
+}
+
+body {
+  background: linear-gradient(2deg,rgb(249, 249, 248) 0%, rgb(243, 242, 241) 100%);
+  color: #333;
+}
+
+/* Estilo do Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem ;
+  background: linear-gradient(2deg,rgb(249, 249, 248) 0%, rgb(243, 242, 241) 100%);
+  color: #fe8400;
+  position: fixed;
+  width: 100%;
+  height: 3rem;
+  top: 0;
+  z-index: 1000;
+
+  .logo {
+    font-family: 'Anton', sans-serif;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  a {
+    position: relative;
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    padding: 4px 6px;
+    margin: 0 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    overflow: hidden;
+    transition: color 0.3s ease;
+  }
+
+  a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #fe8400;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+  }
+
+  a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  nav a {
+    color: rgb(11, 11, 11);
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
+
+/* Banner */
+#inicio.banner {
+  height: 90vh;
+  padding-top: 4rem;
+  margin-top: 2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  position: relative;
+}
+
+#inicio .banner-content {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+#inicio h1 {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+#inicio .btn {
+  background: linear-gradient(2deg,rgba(4, 57, 117, 1) 0%, rgba(0, 119, 255, 1) 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#inicio .btn:hover {
+  background: linear-gradient(177deg,rgba(4, 57, 117, 1) 0%, rgba(0, 119, 255, 1) 100%);
+}
+
+section {
+  height: 90vh;
+  padding: 4rem 2rem;
+  width: 90%;
+  margin: auto;
+  background: #f0f0f0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  text-align: center;
+  color: #003366;
+}
+
+.sobre-nos{
+  background-image: url("/img/sobre-nos/unnamed.jpg");
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+
+  .text-sobre{
+    background-color: rgba(240, 248, 255, 0.563);
+    width: 50rem;
+    height: 28rem;
+    font-size: 1.2rem;
+    color: #000000;
+    line-height: 1.8;
+    border-radius: 0.5rem;
+    padding-top: 0px;
+  }
+  .text-sobre:hover {
+    background:  rgb(240, 248, 255);
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.295);
+  }
+}
+
+.cards-modelos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 120px 20px;
+
+  .cards-modelo {
+    background: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.186);
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .cards-modelo img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .cards-modelo h3 {
+    margin: 1rem 0 0.5rem;
+  }
+
+  .btn-mini {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(2deg,rgba(4, 57, 117, 1) 0%, rgba(0, 119, 255, 1) 100%);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  .btn-mini:hover {
+    background: linear-gradient(177deg,rgba(4, 57, 117, 1) 0%, rgba(0, 119, 255, 1) 100%);
+  }
+}
+
+/* Estilo do Slider de Clientes */
+.clientes {
+  text-align: center;
+  padding: 200px 20px;
+
+  .clientes h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 250px;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; 
+  }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-cliente {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+
+  .card-cliente.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .card-cliente {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.184);
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .card-cliente.active {
+    opacity: 1;
+  }
+
+  .card-cliente img {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .card-cliente .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .card-cliente .info p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .card-cliente .info span {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+
+  /* Estilo dos Pontos de Navegação */
+  .dots-cliente {
+    margin-top: 20px;
+  }
+
+  .dot-cliente {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .dot-cliente.active {
+    background-color: #0077ff;
+  }
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  
+
+  input, textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.184);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.184);
+  }
+  .btn-form {
+    background: linear-gradient(2deg,rgba(4, 57, 117, 1) 0%, rgba(0, 119, 255, 1) 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    width: 50rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.184);
+  }
+
+  .btn-form:hover {
+    background: linear-gradient(177deg,rgba(4, 57, 117, 1) 0%, rgba(0, 119, 255, 1) 100%);
+  }
+}
+
+.footer {
+  background: linear-gradient(2deg,rgb(16, 57, 103) 0%, #3346ee 100%);
+  color: white;
+  padding: 20px 20px 20px;
+  width: 90%;
+  margin-left:4.3rem;
+  margin-right:4.3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.184);
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 80%;
+    margin: auto;
+  }
+
+  .footer h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer p {
+    margin-bottom: 0.5rem;
+  }
+
+  .social-icons-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-icons-vertical a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+
+  .social-icons-vertical a:hover {
+    color: #ffcc00;
+  }
+
+  .social-icons-vertical img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.9rem;
+  }
+}
+
+.mapa {
+  background-color: #e9ecef;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding-left: 8rem;
+    padding-right: 7rem;
+    height: auto;
+    gap: 0rem;
+  }
+
+  header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 0rem;
+    align-items: center;
+  }
+
+  #inicio.banner {
+    height: 20rem;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  #inicio .banner-content {
+    position: static;
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  #inicio h1 {
+    font-size: 1.2rem;
+  }
+
+  .sobre-nos .text-sobre {
+    width: 100%;
+    height: 50rem;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .cards-modelos {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+  
+  .acessorios{
+    width: 20rem;
+    height: 30rem;
+    padding: 1rem;
+    margin-top: 15rem;
+  }
+
+  .clientes {
+    text-align: center;
+    margin-top: 0rem;
+    padding-top: 0rem;
+  }
+  .card-cliente {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 1rem;
+  }
+  .card-cliente .info{
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .dots-cliente {
+    padding-top: 4em;
+  }
+
+  .card-cliente img {
+    width: 100%;
+    height: 10rem;
+  }
+
+  form input,
+  form textarea,
+  form .btn-form {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .footer {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
