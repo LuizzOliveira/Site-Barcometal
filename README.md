@@ -1,6 +1,7 @@
 # 🌊 Site Barcometal - Fabricação e Reforma de Embarcações
 
-Este é um projeto de site institucional desenvolvido para a **Barcometal**, especializada na fabricação e reforma de embarcações em alumínio com liga naval de alta qualidade. O site apresenta os principais serviços, modelos de barcos, informações da empresa e formas de contato.
+Este é um projeto de site institucional desenvolvidos para estudo. O site apresenta os principais serviços, modelos de barcos, informações da empresa e formas de contato.
+Link Site: (https://luizzoliveira.github.io/Site-Barcometal/)
 
 ## 🚀 Tecnologias Utilizadas
 
